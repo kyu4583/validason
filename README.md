@@ -67,6 +67,7 @@ Results:
 - `OrgJson`: `11.52 us`
 
 In this comparison group, Jackson is the fastest. The rest of this document presents evidence relative to Jackson.
+The Jackson function used for comparison is the optimal configuration for JSON string validation, described in [2) Usability / Configuration](#2-usability--configuration).
 
 ## 1) Speed
 

@@ -67,6 +67,7 @@ JSON String Validator 용도로 자주 언급되는 JVM 라이브러리 6종을 
 - `OrgJson`: `11.52 us`
 
 즉, 본 비교군에서는 Jackson이 가장 빠르고, 이후 문서는 그 Jackson 대비 근거를 제시합니다.
+비교에 사용한 Jackson 함수는 [2) Usability / Configuration](#2-usability--configuration)에서 설명하는 JSON 문자열 검증 최적 형태를 사용했습니다.
 
 ## 1) Speed
 
