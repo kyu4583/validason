@@ -1,0 +1,28 @@
+# Build
+/build/
+
+# Gradle
+.gradle/
+gradle.properties
+
+# IDE
+.idea/
+
+# Internal docs
+RELEASING.md
+gradle.properties.example
+
+# IntelliJ run configs
+/benchmark/run/
+
+# Benchmark build artifacts
+/benchmark/build/
+/benchmark/.gradle/
+/benchmark/.idea/
+/benchmark/gc.log
+/benchmark/bench_output*.txt
+/benchmark/scripts/bench_result/
+
+# OS
+.DS_Store
+Thumbs.db
