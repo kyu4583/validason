@@ -53,6 +53,7 @@ Six JVM libraries commonly mentioned for JSON string validation were compared un
 - Targets: `Jackson`, `Gson`, `OrgJson`, `Jsonp`, `Moshi`, `Networknt`
 - Conditions: `length=7–1,000`, 500 JSONs per length, `BENCH_RUNS=11`, `Xms=Xmx=4g`
 - Metric: average processing time based on per-length run medians
+- All validation functions can be found in [`BenchTargets.java`](benchmark/src/main/java/BenchTargets.java)
 
 ![Validator library comparison (all targets)](/graphs/bench_1000_validator_compare_all_validator_core6_reimpl_20260227_024811.png)
 
@@ -68,6 +69,10 @@ Results:
 In this comparison group, Jackson is the fastest. The rest of this document presents evidence relative to Jackson.
 
 ## 1) Speed
+
+> **What is `AlwaysEscape`?**
+> A naive baseline that simply iterates over every character and escapes it (see `BenchTargets.alwaysEscape` in `benchmark/`).
+> It performs no actual validation — it represents the theoretical lower bound of scanning an entire string once.
 
 ### 1-1. Main speed case
 
@@ -106,6 +111,8 @@ Relative comparison:
 - `Validason` vs `Jackson`: **+31.55% faster**
 
 ## 2) Usability / Configuration
+
+All Jackson variants below (`readTree`, `defaultCanonOn`, `canonOff`) are available in [`BenchTargets.java`](benchmark/src/main/java/BenchTargets.java).
 
 ### Jackson: simple approach (`readTree`)
 

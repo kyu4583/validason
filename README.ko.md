@@ -53,6 +53,7 @@ JSON String Validator 용도로 자주 언급되는 JVM 라이브러리 6종을 
 - 대상: `Jackson`, `Gson`, `OrgJson`, `Jsonp`, `Moshi`, `Networknt`
 - 조건: `length=7-1,000`, length당 500개 JSON, `BENCH_RUNS=11`, `Xms=Xmx=4g`
 - 지표: length별 run median 기반 평균 처리 시간
+- 모든 검증 함수는 [`BenchTargets.java`](benchmark/src/main/java/BenchTargets.java)에서 확인할 수 있습니다
 
 ![Validator library comparison (all targets)](/graphs/bench_1000_validator_compare_all_validator_core6_reimpl_20260227_024811.png)
 
@@ -68,6 +69,10 @@ JSON String Validator 용도로 자주 언급되는 JVM 라이브러리 6종을 
 즉, 본 비교군에서는 Jackson이 가장 빠르고, 이후 문서는 그 Jackson 대비 근거를 제시합니다.
 
 ## 1) Speed
+
+> **`AlwaysEscape`란?**
+> 모든 문자를 순회하며 escape만 수행하는 단순 베이스라인입니다 (`benchmark/` 내 `BenchTargets.alwaysEscape` 참고).
+> 실제 검증은 하지 않으며, 문자열 전체를 한 번 훑는 데 드는 이론적 하한선을 나타냅니다.
 
 ### 1-1. Main speed case
 
@@ -106,6 +111,8 @@ JSON String Validator 용도로 자주 언급되는 JVM 라이브러리 6종을 
 - `Validason` vs `Jackson`: **+31.55% faster**
 
 ## 2) Usability / Configuration
+
+아래 Jackson 변형(`readTree`, `defaultCanonOn`, `canonOff`)은 모두 [`BenchTargets.java`](benchmark/src/main/java/BenchTargets.java)에서 확인할 수 있습니다.
 
 ### Jackson: 단순 사용 방식(`readTree`)
 
