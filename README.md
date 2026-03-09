@@ -10,7 +10,7 @@ it is optimized for a single purpose: quickly and reliably answering "Is this st
 
 **Gradle:**
 ```kotlin
-implementation("io.github.kyu4583:validason:1.0.1")
+implementation("io.github.kyu4583:validason:1.0.2")
 ```
 
 **Maven:**
@@ -19,7 +19,7 @@ implementation("io.github.kyu4583:validason:1.0.1")
 <dependency>
     <groupId>io.github.kyu4583</groupId>
     <artifactId>validason</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 

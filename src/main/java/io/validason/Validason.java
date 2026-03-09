@@ -9,7 +9,7 @@ package io.validason;
  * }</pre>
  *
  * @see <a href="https://github.com/kyu4583/validason">GitHub</a>
- * @since 1.0.0
+ * @since 1.0.2
  */
 public final class Validason {
 
